@@ -6,8 +6,8 @@
 <p align="center">
   <a href="https://microresearch-corporation.github.io/Minimalistic-Wallpapers-Gallery/">View Site</a> •
   <a href="https://github.com/login?return_to=%2FMicroResearch-Corporation%2FMinimalistic-Wallpapers-Gallery">Fork This Reo</a> •
-  <a href="https://github.com/Pro-Bandey/minimalistic-wallpapers/tree/main/images">View Images</a> •
-  <a href="./LICENSE">License</a>
+  <a href="https://github.com/MicroResearch-Corporation/minimalistic-wallpapers/tree/main/images">View Images</a> •
+  <a href="LICENSE">License</a>
 </p>
 
 
@@ -127,9 +127,9 @@ Modern layout techniques (columns, grid), transitions, responsive design, and th
 
 No frameworks. Pure JavaScript for performance, portability, and long-term maintainability.
 
-### [Workflow](https://github.com/Pro-Bandey/minimalistic-wallpapers/blob/main/.github/workflows/sync.yml)
+### [Workflow](https://github.com/MicroResearch-Corporation/minimalistic-wallpapers/blob/main/.github/workflows/sync.yml)
 that create databese in repo that contain images.
-Used as a dynamic image database [images-meta.json](https://raw.githubusercontent.com/Pro-Bandey/minimalistic-wallpapers/output/images-meta.json), removing the need for a custom backend. and genrate all meta data of images in output branck
+Used as a dynamic image database [images-meta.json](https://raw.githubusercontent.com/MicroResearch-Corporation/minimalistic-wallpapers/output/images-meta.json), removing the need for a custom backend. and genrate all meta data of images in output branck
 
 ```metaData
 {

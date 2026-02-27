@@ -2,8 +2,8 @@ const CONFIG = {
   repos: [
     {
       name: "M W G",
-      json: "https://raw.githubusercontent.com/Pro-Bandey/minimalistic-wallpapers/output/images-meta.json",
-      base: "https://raw.githubusercontent.com/Pro-Bandey/minimalistic-wallpapers/main/"
+      json: "https://raw.githubusercontent.com/MicroResearch-Corporation/minimalistic-wallpapers/output/images-meta.json",
+      base: "https://raw.githubusercontent.com/MicroResearch-Corporation/minimalistic-wallpapers/main/"
     },
     // {
     //   name: "MegaMind",
@@ -50,22 +50,22 @@ async function start() {
   });
 
   await fetchFiles();
-  
+
   const params = new URLSearchParams(window.location.search);
   const q = params.get("q");
   if (q) document.getElementById("search-in").value = q;
-  
 
-  apply(false); 
+
+  apply(false);
 
   const imgParam = params.get("img");
-  
+
   if (imgParam) {
     const targetIdx = filtered.findIndex(i => (i.id === imgParam || i.name === imgParam));
     if (targetIdx !== -1) {
-      page = Math.floor(targetIdx / CONFIG.limit); 
-      render(); 
-      openLB(targetIdx, false); 
+      page = Math.floor(targetIdx / CONFIG.limit);
+      render();
+      openLB(targetIdx, false);
     }
   } else if (savedPage) {
     const p = parseInt(savedPage);
@@ -106,7 +106,7 @@ async function fetchFiles() {
 
       return {
         raw: img,
-        id: img.id || img.name, 
+        id: img.id || img.name,
         name: img.name || img.src.split("/").pop(),
         url: (img._baseUrl || "") + img.src,
         folder: img.folder || "root",
@@ -144,8 +144,8 @@ function apply(resetPage = true) {
     if (typeof vA === "string") return state.order === "asc" ? vA.localeCompare(vB) : vB.localeCompare(vA);
     return state.order === "asc" ? vA - vB : vB - vA;
   });
-  
-  if(resetPage) {
+
+  if (resetPage) {
     page = 0;
     sessionStorage.setItem("mwg_page", 0);
   }
@@ -164,7 +164,7 @@ function render() {
     const gIdx = startIdx + i;
     const card = document.createElement("div");
     card.className = "card";
-    card.onclick = () => openLB(gIdx, true); 
+    card.onclick = () => openLB(gIdx, true);
     card.oncontextmenu = (e) => openMenu(e, gIdx, "card");
 
     let timer;
@@ -222,11 +222,11 @@ function renderTabs() {
     const b = document.createElement("button");
     b.className = `tab ${i === page ? "active" : ""}`;
     b.innerText = i + 1;
-    b.onclick = () => { 
-        page = i; 
-        sessionStorage.setItem("mwg_page", i); 
-        render(); 
-        window.scrollTo(0, 0); 
+    b.onclick = () => {
+      page = i;
+      sessionStorage.setItem("mwg_page", i);
+      render();
+      window.scrollTo(0, 0);
     };
     t.appendChild(b);
   }
@@ -259,7 +259,8 @@ const Actions = {
   },
   copyU: (i) => { navigator.clipboard.writeText(filtered[i].url); alert("Link Copied!"); },
   shareU: (i) => navigator.share?.({ title: filtered[i].name, url: filtered[i].url })?.catch(() => { }),
-  props: (i) => {    const img = filtered[i] || {};    
+  props: (i) => {
+    const img = filtered[i] || {};
     const iconid = `<span class="material-icons" style="vertical-align:middle; font-size:15px;">new_releases</span>`;
     const iconSource = `<span class="material-icons" style="vertical-align:middle; font-size:15px;">source</span>`;
     const iconWidth = `<span class="material-icons" style="vertical-align:middle; rotate: 90deg; font-size:15px;">height</span>`;
@@ -308,7 +309,7 @@ const Actions = {
       { l: "Repo Path", v: `${iconRepo} ${img.path || "—"}` },
       { l: "Added", v: `${iconDate} ${addedStr}` },
       { l: "Updated", v: `${iconDate} ${updatedStr}` },
-      { l: "Hash", v: `${iconHash} ${img.hash || "—" }` },
+      { l: "Hash", v: `${iconHash} ${img.hash || "—"}` },
       { l: "Tags", v: `${iconTags} ${(Array.isArray(img.tags) ? img.tags.join(", ") : (img.tags || "—"))}` }
     ];
 
@@ -393,7 +394,7 @@ function openLB(i, pushState = true) {
   document.getElementById("lb-img").src = img.url;
   document.getElementById("lightbox").style.display = "flex";
   document.body.style.overflow = "hidden";
-  
+
   if (pushState) {
     const url = new URL(window.location);
     url.searchParams.set("img", img.id || img.name);
@@ -422,24 +423,24 @@ function openLB(i, pushState = true) {
 function closeLB(pushState = true) {
   document.getElementById("lightbox").style.display = "none";
   document.body.style.overflow = "auto";
-  
+
   if (pushState) {
     const url = new URL(window.location);
-    url.searchParams.delete("img");    window.history.pushState({ lbOpen: false }, "", url);
+    url.searchParams.delete("img"); window.history.pushState({ lbOpen: false }, "", url);
   }
 }
 
 window.addEventListener("popstate", (e) => {
   const url = new URL(window.location);
   const imgParam = url.searchParams.get("img");
-  
+
   if (imgParam) {
-     const idx = filtered.findIndex(i => (i.id === imgParam || i.name === imgParam));
-     if(idx !== -1) openLB(idx, false);
+    const idx = filtered.findIndex(i => (i.id === imgParam || i.name === imgParam));
+    if (idx !== -1) openLB(idx, false);
   } else {
-     if (document.getElementById("lightbox").style.display === "flex") {
-        closeLB(false); 
-     }
+    if (document.getElementById("lightbox").style.display === "flex") {
+      closeLB(false);
+    }
   }
 });
 
@@ -449,14 +450,14 @@ function closeProps() {
   document.body.style.overflow = "auto";
 }
 
-function nav(d) { 
-  curIdx = (curIdx + d + filtered.length) % filtered.length; 
+function nav(d) {
+  curIdx = (curIdx + d + filtered.length) % filtered.length;
   const img = filtered[curIdx];
   const url = new URL(window.location);
   url.searchParams.set("img", img.id || img.name);
   window.history.replaceState({ lbOpen: true, imgId: img.id }, "", url);
-  
-  openLB(curIdx, false); 
+
+  openLB(curIdx, false);
 }
 
 document.getElementById("theme-tog").onclick = () => {
@@ -465,10 +466,10 @@ document.getElementById("theme-tog").onclick = () => {
 };
 document.getElementById("layout-sel").onchange = (e) => { localStorage.setItem("layout", e.target.value); render(); };
 
-document.getElementById("sort-by").onchange = (e) => { 
-    state.sort = e.target.value; 
-    localStorage.setItem("sort", e.target.value); 
-    apply(true);
+document.getElementById("sort-by").onchange = (e) => {
+  state.sort = e.target.value;
+  localStorage.setItem("sort", e.target.value);
+  apply(true);
 };
 
 const btn = document.getElementById("sort-order");
@@ -487,12 +488,12 @@ if (savedOrder === "desc") {
   btn.style.transform = "scaleY(1)";
 }
 
-document.getElementById("search-in").oninput = (e) => { 
-    const url = new URL(window.location); 
-    if (e.target.value) url.searchParams.set("q", e.target.value); 
-    else url.searchParams.delete("q"); 
-    window.history.replaceState({}, "", url); 
-    apply(true); 
+document.getElementById("search-in").oninput = (e) => {
+  const url = new URL(window.location);
+  if (e.target.value) url.searchParams.set("q", e.target.value);
+  else url.searchParams.delete("q");
+  window.history.replaceState({}, "", url);
+  apply(true);
 };
 
 window.onscroll = hideMenus;
