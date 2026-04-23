@@ -2,8 +2,8 @@ const CONFIG = {
   repos: [
     {
       name: "M W G",
-      json: "https://raw.githubusercontent.com/MicroResearch-Corporation/minimalistic-wallpapers/output/images-meta.json",
-      base: "https://raw.githubusercontent.com/MicroResearch-Corporation/minimalistic-wallpapers/main/"
+      json: "https://raw.githubusercontent.com/MainRoute-Core/minimalistic-wallpapers/output/images-meta.json",
+      base: "https://raw.githubusercontent.com/MainRoute-Core/minimalistic-wallpapers/main/"
     },
     // {
     //   name: "MegaMind",

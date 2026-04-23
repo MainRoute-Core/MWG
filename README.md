@@ -4,9 +4,9 @@
   <img src="./src/icon.png" height="200" alt="Icon" />
 </p>
 <p align="center">
-  <a href="https://microresearch-corporation.github.io/Minimalistic-Wallpapers-Gallery/">View Site</a> •
-  <a href="https://github.com/login?return_to=%2FMicroResearch-Corporation%2FMinimalistic-Wallpapers-Gallery">Fork This Reo</a> •
-  <a href="https://github.com/MicroResearch-Corporation/minimalistic-wallpapers/tree/main/images">View Images</a> •
+  <a href="https://mainroute-core.github.io/MWG/">View Site</a> •
+  <a href="https://github.com/MainRoute-Core/MWG">Fork This Reo</a> •
+  <a href="https://github.com/MainRoute-Core/minimalistic-wallpapers/tree/main/images">View Images</a> •
   <a href="LICENSE">License</a>
 </p>
 
@@ -95,7 +95,7 @@ Real-time sorting by name, folder, resolution, file type, or random shuffle.
 
 
 ---
-### [Performance](https://pagespeed.web.dev/analysis/https-microresearch-corporation-github-io-Minimalistic-Wallpapers-Gallery/0h10l3qa7x?form_factor=desktop)
+### [Performance](https://pagespeed.web.dev/analysis/https-MainRoute-Core-github-io-MWG/0h10l3qa7x?form_factor=desktop)
 This design ensures **maximum performance, zero hosting cost, instant scalability, and long-term maintainability**.
 
 ---
@@ -127,9 +127,9 @@ Modern layout techniques (columns, grid), transitions, responsive design, and th
 
 No frameworks. Pure JavaScript for performance, portability, and long-term maintainability.
 
-### [Workflow](https://github.com/MicroResearch-Corporation/minimalistic-wallpapers/blob/main/.github/workflows/sync.yml)
+### [Workflow](https://github.com/MainRoute-Core/minimalistic-wallpapers/blob/main/.github/workflows/sync.yml)
 that create databese in repo that contain images.
-Used as a dynamic image database [images-meta.json](https://raw.githubusercontent.com/MicroResearch-Corporation/minimalistic-wallpapers/output/images-meta.json), removing the need for a custom backend. and genrate all meta data of images in output branck
+Used as a dynamic image database [images-meta.json](https://raw.githubusercontent.com/MainRoute-Core/minimalistic-wallpapers/output/images-meta.json), removing the need for a custom backend. and genrate all meta data of images in output branck
 
 ```metaData
 {
@@ -249,5 +249,5 @@ This architecture allows easy expansion:
 
 ---
 
-© 2025 [Minimalistic Wallpapers Gallery](https://microresearch-corporation.github.io/Minimalistic-Wallpapers-Gallery/)
-Powered by [MicroResearch Corporation](https://microresearch-corporation.github.io/) and Develop by [M Ramzan Ch](https://mramzanch.blogspot.com/)
+© 2025 [Minimalistic Wallpapers Gallery](https://mainroute-core.github.io/MWG/)
+Powered by [MainRoute Core](https://mainroute-core.github.io/) and Develop by [Pro Bandey](https://github.com/Pro-Bandey) & [M Ramzan Ch](https://mramzanch.blogspot.com/)
