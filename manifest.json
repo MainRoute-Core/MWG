@@ -1,7 +1,7 @@
 {
   "short_name": "M W G",
   "name": "Minimalistic Wallpapers Gallery",
-  "start_url": "/Minimalistic-Wallpapers-Gallery",
+  "start_url": "/MWG",
   "display": "standalone",
   "description": "Minimalistic, flat art, and colorful, digital nature wallpapers and an API for randomly selecting them.",
   "dir": "auto",
